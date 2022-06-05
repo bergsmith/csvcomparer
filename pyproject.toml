@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "csvcomparer"
+version = "0.1.0"
+description = "Compare delimited files that share a common key."
+license = "MIT"
+authors = ["Ryan Bergsmith <ryguydev@gmail.com>"]
+readme = "README.md"
+repository = "https://github.com/bergsmith/csvcomparer"
+documentation = "https://csvcomparer.readthedocs.io/en/latest/"
+keywords = ["compare", "csv", "diff", "difference", "comparer"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pandas = "^1.4.2"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.1.1"
+pytest-cov = "^3.0.0"
+black = "^21.9b0"
+flake8 = "^4.0.1"
+pyproject-flake8 = "^0.0.1-alpha.4"
+Sphinx = "4.5.0"
+sphinx-rtd-theme = "^1.0.0"
+sphinx-tabs = "^3.3.1"
+
+[tool.poetry.scripts]
+csvcomparer = "csvcomparer.__main__:main"
+
+[tool.pytest.ini_options]
+testpaths = "tests"
+addopts = "-vv --cov --cov-report term-missing --durations=10"
+
+[tool.flake8]
+extend-ignore = "E501"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
