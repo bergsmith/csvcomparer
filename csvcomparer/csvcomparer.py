@@ -25,15 +25,15 @@ MULTI_COL_KEY_SEP: str = ", "
 def requires_data_load(func: Callable) -> Callable:
     """Decorator that loads csv files if required.
 
-    All of the diff attributes require that data be loaded into respective
+    All CsvCompare diff attributes require that data be loaded into respective
     dataframes. This decorator checks to see if the files have been loaded,
     and if not, loads them.
 
     Args:
-        func (_type_): _description_
+        func (Callable): One of CsvCompare's diff properties.
 
     Returns:
-        Callable: _description_
+        Callable: Decorated CsvCompare diff property.
     """
     @wraps(func)
     def wrapper(*args, **kwargs):
