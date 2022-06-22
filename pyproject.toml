@@ -36,6 +36,7 @@ extend-ignore = "E501"
 
 [tool.semantic_release]
 version_variable = "pyproject.toml:version"
+branch = "main"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
